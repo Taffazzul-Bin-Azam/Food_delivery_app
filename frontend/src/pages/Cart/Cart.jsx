@@ -1,12 +1,8 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import './Cart.css';
 import { StoreContext } from '../../Context/StoreContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-// ✅ Initialize Toastify once (preferably in App.jsx, but fine here for now)
-import { ToastContainer } from 'react-toastify';
 
 const Cart = () => {
   const {
@@ -45,9 +41,6 @@ const Cart = () => {
 
   return (
     <div className='cart'>
-      {/* Toast Container */}
-      <ToastContainer />
-
       <div className="cart-items">
         <div className="cart-items-title">
           <p>Items</p> <p>Title</p> <p>Price</p> <p>Quantity</p> <p>Total</p> <p>Remove</p>
