@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='header-contents'>
-                <h2>Order Now !</h2>
+<h2>Order <span>Now!</span></h2>
                 <p>
                     Choose from a diverse menu featuring a delectable array of dishes 
                     crafted with the finest ingredients.
