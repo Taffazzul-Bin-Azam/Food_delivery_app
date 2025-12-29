@@ -22,7 +22,7 @@
     border-radius: 4px;
     outline-color: tomato;
 }
-.place-order-left .multi-fields{
+.place-order-left .multi-field{
     display: flex;
     gap: 10px;
 }
@@ -38,9 +38,6 @@
     padding: 12px 30px;
     border-radius: 4px;
     cursor: pointer;
-}
-.place-order .cart-total button{
-    margin-top: 30px;
 }
 .payment{
     display: flex;

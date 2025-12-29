@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import './ExploreMenu.css'
 import { StoreContext } from '../../Context/StoreContext'
-import { menu_list } from '../../assets/assets'
+
 
 const ExploreMenu = ({category,setCategory}) => {
 

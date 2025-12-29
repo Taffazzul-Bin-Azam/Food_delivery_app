@@ -34,13 +34,13 @@ const Navbar = ({ setShowLogin }) => {
   const handleSelectSuggestion = (itemName) => {
     setSearchTerm(itemName);
     setSuggestions([]);
-    navigate(`/menu?search=${encodeURIComponent(itemName)}`);
+    navigate(`/?search=${encodeURIComponent(itemName)}`);
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchTerm.trim() !== "") {
-      navigate(`/menu?search=${encodeURIComponent(searchTerm)}`);
+      navigate(`/search=${encodeURIComponent(searchTerm)}`);
       setSuggestions([]);
     }
   };
@@ -49,12 +49,20 @@ const Navbar = ({ setShowLogin }) => {
     <div className='navbar'>
       <Link to='/'><img className='logo' src={assets.logo} alt="" /></Link>
       
-      <ul className="navbar-menu">
-        <Link to="/" onClick={() => setMenu("home")} className={`${menu === "home" ? "active" : ""}`}>home</Link>
-        <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "active" : ""}`}>menu</a>
-        <a href='#app-download' onClick={() => setMenu("mob-app")} className={`${menu === "mob-app" ? "active" : ""}`}>mobile app</a>
-        <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "active" : ""}`}>contact us</a>
-      </ul>
+  <ul className="navbar-menu">
+  <Link to="/" onClick={() => setMenu("home")} className={`${menu === "home" ? "active" : ""}`}>home</Link>
+  <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === "menu" ? "active" : ""}`}>menu</a>
+  <a href='#app-download' onClick={() => setMenu("mob-app")} className={`${menu === "mob-app" ? "active" : ""}`}>mobile app</a>
+  <a href='#footer' onClick={() => setMenu("contact")} className={`${menu === "contact" ? "active" : ""}`}>contact us</a>
+
+  {/* Show Orders link only if logged in */}
+  {token && (
+    <Link to="/myorders" onClick={() => setMenu("orders")} className={`${menu === "orders" ? "active" : ""}`}>
+      MyOrders
+    </Link>
+  )}
+</ul>
+
 
       <div className="navbar-right">
         {/* Search Bar */}
