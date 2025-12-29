@@ -15,7 +15,6 @@ const Cart = () => {
     deliveryCharge,
     token
   } = useContext(StoreContext);
-
   const navigate = useNavigate();
 
   const handleProceedToCheckout = () => {
