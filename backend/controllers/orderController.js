@@ -13,7 +13,7 @@ const razorpay = new Razorpay({
 //config variables
 const currency = "inr";
 const deliveryCharge = 50;
-const frontend_URL = "http://localhost:5173";
+const frontend_URL = "https://food-delivery-app-frontend-zf3n.onrender.com/";
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
