@@ -14,6 +14,7 @@ const razorpay = new Razorpay({
 const currency = "inr";
 const deliveryCharge = 50;
 const frontend_URL = "https://food-delivery-app-frontend-zf3n.onrender.com";
+// const frontend_URL = "http://localhost:5173";
 
 // Placing User Order for Frontend using stripe
 const placeOrder = async (req, res) => {
@@ -23,6 +24,9 @@ const placeOrder = async (req, res) => {
       items: req.body.items,
       amount: req.body.amount,
       address: req.body.address,
+      payment: true,
+      paymentMethod: "stripe",
+      status: "Food pocessing",
     });
     await newOrder.save();
     await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
@@ -33,7 +37,7 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: item.name,
         },
-        unit_amount: item.price * 100 * 80,
+        unit_amount: item.price * 100,
       },
       quantity: item.quantity,
     }));
@@ -44,7 +48,7 @@ const placeOrder = async (req, res) => {
         product_data: {
           name: "Delivery Charge",
         },
-        unit_amount: deliveryCharge * 100 * 80,
+        unit_amount: deliveryCharge * 100,
       },
       quantity: 1,
     });
@@ -63,7 +67,6 @@ const placeOrder = async (req, res) => {
   }
 };
 
-// Placing User Order for Frontend using stripe
 const placeOrderCod = async (req, res) => {
   try {
     const newOrder = new orderModel({
@@ -72,6 +75,7 @@ const placeOrderCod = async (req, res) => {
       amount: req.body.amount,
       address: req.body.address,
       payment: true,
+      paymentMethod: "cod",
     });
     await newOrder.save();
     await userModel.findByIdAndUpdate(req.body.userId, { cartData: {} });
@@ -183,7 +187,7 @@ const verifyRazorpay = async (req, res) => {
 
     await orderModel.findByIdAndUpdate(orderId, {
       payment: true,
-      status: "Processing",
+      status: "Food Processing",
     });
 
     await userModel.findByIdAndUpdate(req.body.userId, {
