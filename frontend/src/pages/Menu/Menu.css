@@ -1,0 +1,134 @@
+.menu-page {
+  padding: 40px 6%;
+  background: #fafafa;
+}
+
+.menu-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Categories */
+.menu-categories {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.menu-categories button {
+  padding: 12px 26px;        /* 🔥 BIGGER */
+  border-radius: 30px;
+  border: 2px solid tomato;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: tomato;
+  transition: all 0.3s ease;
+}
+
+.menu-categories button.active,
+.menu-categories button:hover {
+  background: tomato;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 99, 71, 0.35);
+}
+
+
+/* Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.menu-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Image */
+.menu-img-wrapper {
+  height: 180px;
+  overflow: hidden;
+}
+
+.menu-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.menu-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Content */
+.menu-card-content {
+  padding: 16px;
+}
+
+.menu-card-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menu-card-content p {
+  font-size: 14px;
+  color: #777;
+  margin: 8px 0 14px;
+}
+
+/* Footer */
+.menu-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-card-footer .price {
+  font-size: 20px;        /* 🔥 Bigger */
+  font-weight: 800;
+  color: tomato;
+}
+
+
+.menu-card-footer button {
+  padding: 10px 26px;     /* 🔥 BIG */
+  border-radius: 30px;
+  border: none;
+  background: tomato;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-card-footer button:hover {
+  background: #e94424;
+  transform: scale(1.07);
+  box-shadow: 0 10px 20px rgba(255, 99, 71, 0.4);
+}
+
+
+/* Empty State */
+.no-results {
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-top: 60px;
+}

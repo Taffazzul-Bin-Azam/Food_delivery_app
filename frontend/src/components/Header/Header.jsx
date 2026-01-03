@@ -1,23 +1,24 @@
 import React from 'react';
 import './Header.css';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-    const scrollToMenu = () => {
-        const menuSection = document.getElementById('explore-menu');
-        if (menuSection) {
-            menuSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    const navigate = useNavigate();
 
     return (
         <div className='header'>
             <div className='header-contents'>
-<h2>Order <span>Now!</span></h2>
+                <h2>Order <span>Now!</span></h2>
+
                 <p>
                     Choose from a diverse menu featuring a delectable array of dishes 
                     crafted with the finest ingredients.
                 </p>
-                <button onClick={scrollToMenu}>View Menu</button>
+
+                {/* 🔥 Redirect to Menu Page */}
+                <button onClick={() => navigate('/menu')}>
+                    View Menu
+                </button>
             </div>
         </div>
     );

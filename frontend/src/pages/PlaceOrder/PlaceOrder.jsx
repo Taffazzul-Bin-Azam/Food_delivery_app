@@ -182,16 +182,18 @@ const PlaceOrder = () => {
             <img src={payment === "cod" ? assets.checked : assets.un_checked} />
             <p>COD</p>
           </div>
-{/* 
-          <div onClick={() => setPayment("stripe")} className="payment-option">
-            <img src={payment === "stripe" ? assets.checked : assets.un_checked} />
-            <p>Stripe</p>
-          </div> */}
-
-          <div onClick={() => setPayment("razorpay")} className="payment-option">
+          
+           <div onClick={() => setPayment("razorpay")} className="payment-option">
             <img src={payment === "razorpay" ? assets.checked : assets.un_checked} />
             <p>Razorpay</p>
           </div>
+
+          <div onClick={() => setPayment("stripe")} className="payment-option">
+            <img src={payment === "stripe" ? assets.checked : assets.un_checked} />
+            <p>Stripe</p>
+          </div>
+
+         
         </div>
 
         <button className="place-order-submit" type="submit">

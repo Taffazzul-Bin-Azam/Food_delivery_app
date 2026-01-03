@@ -1,54 +1,105 @@
-.explore-menu{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.explore-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
 }
-.explore-menu h1{
-    color: #262626;
-    font-weight: 500;
+
+/* Title polish */
+.explore-menu h1 {
+  color: #ef6666;
+  font-weight: 600;
+  letter-spacing: 0.4px;
 }
-.explore-menu-text{
-    max-width: 60%;
-    color: #808080;
+
+/* Description polish */
+.explore-menu-text {
+  max-width: 60%;
+  color: #5c5454;
+  line-height: 1.6;
 }
-.explore-menu-list{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
-    margin: 20px 0px;
-    overflow-x: scroll;
+
+/* Horizontal list */
+.explore-menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  margin: 20px 0;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
 }
-.explore-menu-list::-webkit-scrollbar{
-    display: none;
+
+.explore-menu-list::-webkit-scrollbar {
+  height: 6px;
 }
-.explore-menu-list-item img{
-    width: 7.5vw;
-    min-width: 80px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: 0.2s;
+
+.explore-menu-list::-webkit-scrollbar-thumb {
+  background: #f2b5b5;
+  border-radius: 10px;
 }
-.explore-menu-list-item .active{
-    border: 4px solid tomato;
-    padding: 2px;
+
+/* Item container */
+.explore-menu-list-item {
+  transition: transform 0.25s ease;
 }
-.explore-menu-list-item p{
-    margin-top: 10px;
-    color: #747474;
-    font-size: max(1.4vw,16px);
-    cursor: pointer;
+
+.explore-menu-list-item:hover {
+  transform: translateY(-5px);
 }
-.explore-menu hr{
-    margin: 10px 0px;
-    height: 2px;
-    background-color: #E2E2E2;
-    border: none;
+
+/* Image – SIZE SAME */
+.explore-menu-list-item img {
+  width: 7.5vw;
+  min-width: 80px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 4px;
+  background: white;
+  transition: all 0.3s ease;
 }
+
+/* Hover glow */
+.explore-menu-list-item img:hover {
+  box-shadow: 0 12px 25px rgba(239, 102, 102, 0.35);
+  transform: scale(1.05);
+}
+
+/* Active category */
+.explore-menu-list-item .active {
+  border: 3px solid tomato;
+  box-shadow: 0 0 0 6px rgba(255, 99, 71, 0.18);
+}
+
+/* Text – SAME size */
+.explore-menu-list-item p {
+  margin-top: 10px;
+  color: #747474;
+  font-size: max(1.4vw, 16px);
+  transition: color 0.3s ease;
+}
+
+/* Text hover */
+.explore-menu-list-item:hover p {
+  color: tomato;
+  font-weight: 500;
+}
+
+/* Divider upgrade */
+.explore-menu hr {
+  margin: 10px 0;
+  height: 2px;
+  background: linear-gradient(to right, #ef6666, #ffb3b3);
+  border: none;
+  border-radius: 10px;
+}
+
+/* Responsive (NO SIZE CHANGE) */
 @media (max-width:1050px) {
-    .explore-menu-text{
-        max-width: 100%;
-        font-size: 14px;
-    }
+  .explore-menu-text {
+    max-width: 100%;
+    font-size: 14px;
+  }
 }
